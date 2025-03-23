@@ -5,7 +5,7 @@ import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER, FRONTEND_URL, PORT
 from './config.js';
 
 const app = express();
-const client = new pg.Client({
+const client = new pg.Pool({
     user: DB_USER,
     host: DB_HOST,
     database: DB_DATABASE,
@@ -15,7 +15,7 @@ const client = new pg.Client({
 });
 
 // Intentar conectar a la base de datos
-client.connect()
+/*client.connect()
     .then(() => {
         console.log('Conexión a PostgreSQL exitosa');
     })
@@ -25,7 +25,7 @@ client.connect()
     .finally(() => {
         // Cerrar la conexión si es necesario
         client.end();
-    });
+    });*/
 
 app.use(cors({
     origin: FRONTEND_URL
