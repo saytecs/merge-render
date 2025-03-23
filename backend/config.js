@@ -5,4 +5,4 @@ export const DB_DATABASE = process.env.DB_DATABASE || "postgres"
 export const DB_PASSWORD = process.env.DB_PASSWORD || 'nema08'
 export const DB_USER = process.env.DB_USER || 'nema'
 
-export const PORT = 3000
+export const PORT =  process.env.PORT || 3000
